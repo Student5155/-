@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зерно в мешках | Доставка и самовывоз для вашего хозяйства</title>
+    <meta name="description" content="Качественное зерно в мешках для скота и птицы. 10 видов. Честный вес, свежий урожай, доставка и самовывоз.">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wheat: '#F4C430',
+                        amber: '#FFBF00',
+                        cream: '#FDFBF7',
+                        brown: '#3E2723',
+                        sprout: '#4CAF50',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Скрытие полосы прокрутки для горизонтальных каруселей на мобильных, но сохранение функционала */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Отступ для якорных ссылок из-за фиксированного хедера */
+        section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-cream text-brown font-sans antialiased pb-20 md:pb-0">
+
+    <!-- 1. HEADER (Sticky) -->
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md shadow-sm border-b border-wheat/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <i class="fa-solid fa-wheat-awn text-amber text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-brown">Агро<span class="text-amber">Зерно</span></span>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#catalog" class="text-brown hover:text-amber font-medium transition">Каталог</a>
+                    <a href="#delivery" class="text-brown hover:text-amber font-medium transition">Доставка и самовывоз</a>
+                    <a href="#advantages" class="text-brown hover:text-amber font-medium transition">Преимущества</a>
+                    <a href="#contacts" class="text-brown hover:text-amber font-medium transition">Контакты</a>
+                </nav>
+
+                <!-- Desktop Phone & CTA -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="tel:+79001234567" class="font-bold text-brown hover:text-amber transition">
+                        <i class="fa-solid fa-phone mr-1"></i> +7 (900) 123-45-67
+                    </a>
+                    <a href="#catalog" class="bg-amber hover:bg-wheat text-brown font-semibold py-2 px-5 rounded-lg transition shadow-md min-h-[44px] flex items-center">
+                        Заказать
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-brown hover:text-amber focus:outline-none p-2 min-h-[44px] min-w-[44px] flex items-center justify-center">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cream border-t border-wheat/30 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#catalog" class="block px-3 py-3 rounded-md text-base font-medium text-brown hover:bg-wheat/20 min-h-[44px] flex items-center">Каталог</a>
+                <a href="#delivery" class="block px-3 py-3 rounded-md text-base font-medium text-brown hover:bg-wheat/20 min-h-[44px] flex items-center">Доставка и самовывоз</a>
+                <a href="#advantages" class="block px-3 py-3 rounded-md text-base font-medium text-brown hover:bg-wheat/20 min-h-[44px] flex items-center">Преимущества</a>
+                <a href="#contacts" class="block px-3 py-3 rounded-md text-base font-medium text-brown hover:bg-wheat/20 min-h-[44px] flex items-center">Контакты</a>
+                <a href="tel:+79001234567" class="block px-3 py-3 mt-4 text-center bg-amber rounded-lg font-bold text-brown min-h-[44px] flex items-center justify-center">
+                    <i class="fa-solid fa-phone mr-2"></i> Позвонить
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section id="hero" class="relative h-[85vh] md:h-[70vh] flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-brown/60"></div> <!-- Overlay -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <span class="inline-block bg-sprout/90 text-white text-sm font-bold px-4 py-1.5 rounded-full mb-4 uppercase tracking-wider">Свежий урожай 2024</span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 leading-tight">
+                Качественное зерно в мешках <span class="text-wheat">для вашего хозяйства</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                Чистое, сухое зерно для скота и птицы. 10 видов. Честный вес. Доставка по району и самовывоз со склада.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#catalog" class="bg-amber hover:bg-wheat text-brown font-bold py-4 px-8 rounded-xl text-lg transition shadow-lg transform hover:scale-105 min-h-[44px] flex items-center justify-center">
+                    Смотреть каталог и цены
+                </a>
+                <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20узнать%20наличие%20зерна." target="_blank" class="bg-sprout hover:bg-green-600 text-white font-bold py-4 px-8 rounded-xl text-lg transition shadow-lg transform hover:scale-105 min-h-[44px] flex items-center justify-center">
+                    <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Написать в WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CATALOG SECTION -->
+    <section id="catalog" class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Наш каталог</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">Зерно отборное, без пыли и мусора. Фасовка в прочные мешки по 40 кг.</p>
+        </div>
+
+        <!-- Category 1: Для птицы -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-brown mb-6 flex items-center">
+                <i class="fa-solid fa-crow text-amber mr-3"></i> Для птицы (кур, уток, гусей)
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Product Card Template -->
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80" alt="Пшеница" class="w-full h-full object-cover">
+                        <span class="absolute top-3 right-3 bg-sprout text-white text-xs font-bold px-2 py-1 rounded">В наличии</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Пшеница фуражная</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">850 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Пшеницу%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1551754655-cd27e38d2076?auto=format&fit=crop&w=600&q=80" alt="Кукуруза" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Кукуруза дробленая</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">900 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Кукурузу%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1595855709915-fa457bd60e41?auto=format&fit=crop&w=600&q=80" alt="Просо" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Просо</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">750 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Просо%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80" alt="Ячмень" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Ячмень</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">800 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Ячмень%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 2: Для скота -->
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-brown mb-6 flex items-center">
+                <i class="fa-solid fa-cow text-amber mr-3"></i> Для скота (КРС, свиней)
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1595855709915-fa457bd60e41?auto=format&fit=crop&w=600&q=80" alt="Овес" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Овес</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">700 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Овес%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1515586996398-9c14787e3c3b?auto=format&fit=crop&w=600&q=80" alt="Горох" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Горох кормовой</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">1100 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Горох%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=600&q=80" alt="Отруби" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Пшеничные отруби</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">600 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Отруби%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1473216892301-5ca5f30e8ae5?auto=format&fit=crop&w=600&q=80" alt="Шрот" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Подсолнечный шрот</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">950 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Шрот%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Category 3: Универсальное -->
+        <div class="mb-8">
+            <h3 class="text-2xl font-bold text-brown mb-6 flex items-center">
+                <i class="fa-solid fa-star text-amber mr-3"></i> Универсальное / Миксы
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1595855709915-fa457bd60e41?auto=format&fit=crop&w=600&q=80" alt="Сорго" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Сорго красное</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">850 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Сорго%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden border border-gray-100 flex flex-col sm:col-span-2 lg:col-span-2">
+                    <div class="h-48 bg-gray-200 relative">
+                        <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80" alt="Зерносмесь" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-amber text-brown text-xs font-bold px-3 py-1.5 rounded-full">Хит продаж</span>
+                    </div>
+                    <div class="p-5 flex flex-col flex-grow">
+                        <h4 class="text-xl font-bold text-brown mb-1">Зерносмесь универсальная</h4>
+                        <p class="text-gray-500 text-sm mb-4">Мешок 40 кг (Сбалансированный состав для птицы и скота)</p>
+                        <div class="mt-auto">
+                            <div class="text-2xl font-extrabold text-amber mb-4">800 ₽</div>
+                            <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20Зерносмесь%20(40кг)" target="_blank" class="block w-full bg-sprout hover:bg-green-600 text-white font-semibold text-center py-3 rounded-lg transition min-h-[44px] flex items-center justify-center">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> Заказать
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. DELIVERY & PICKUP -->
+    <section id="delivery" class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Доставка и самовывоз</h2>
+                <p class="text-gray-600">Удобные варианты получения заказа для вашего хозяйства</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Pickup -->
+                <div class="bg-cream p-8 rounded-2xl border border-wheat/30 flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-amber/20 p-4 rounded-full flex-shrink-0">
+                        <i class="fa-solid fa-warehouse text-amber text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brown mb-3">Самовывоз со склада</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start"><i class="fa-solid fa-location-dot text-sprout mt-1 mr-2"></i> с. Агрономическое, ул. Полевая, д. 15</li>
+                            <li class="flex items-start"><i class="fa-solid fa-clock text-sprout mt-1 mr-2"></i> Пн-Сб: 08:00 - 19:00, Вс: 09:00 - 15:00</li>
+                            <li class="flex items-start"><i class="fa-solid fa-truck-ramp-box text-sprout mt-1 mr-2"></i> Помогаем с погрузкой в ваш транспорт</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Delivery -->
+                <div class="bg-cream p-8 rounded-2xl border border-wheat/30 flex flex-col md:flex-row gap-6 items-start">
+                    <div class="bg-amber/20 p-4 rounded-full flex-shrink-0">
+                        <i class="fa-solid fa-truck text-amber text-3xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-brown mb-3">Доставка по району</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start"><i class="fa-solid fa-check text-sprout mt-1 mr-2"></i> Бесплатно при заказе от 10 мешков</li>
+                            <li class="flex items-start"><i class="fa-solid fa-coins text-sprout mt-1 mr-2"></i> Стоимость доставки от 1 до 9 мешков: 500 ₽</li>
+                            <li class="flex items-start"><i class="fa-solid fa-phone text-sprout mt-1 mr-2"></i> Доставляем в день заказа или на следующий</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Placeholder -->
+            <div class="w-full h-64 md:h-96 bg-gray-200 rounded-2xl overflow-hidden border border-gray-300 relative">
+                <!-- Замените src на реальную ссылку из Яндекс.Карт или Google Maps (Поделиться -> Встроить карту) -->
+                <iframe src="https://yandex.ru/map-widget/v1/?ll=37.617635%2C55.755814&z=12" width="100%" height="100%" frameborder="0" allowfullscreen="true" class="absolute inset-0"></iframe>
+                <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg shadow text-sm font-medium text-brown">
+                    <i class="fa-solid fa-map-pin text-amber mr-1"></i> Мы находимся здесь
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE US -->
+    <section id="advantages" class="py-16 px-4 max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-brown mb-4">Почему выбирают нас</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="text-center p-6">
+                <div class="w-16 h-16 bg-sprout/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-broom text-sprout text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brown mb-2">Без пыли и мусора</h4>
+                <p class="text-gray-600 text-sm">Зерно проходит предварительную очистку. Вы платите только за чистый продукт.</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="w-16 h-16 bg-sprout/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-scale-balanced text-sprout text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brown mb-2">Честный вес</h4>
+                <p class="text-gray-600 text-sm">Каждый мешок взвешивается при вас. Никакого недовеса. Ровно 40 кг.</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="w-16 h-16 bg-sprout/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-seedling text-sprout text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brown mb-2">Свежий урожай</h4>
+                <p class="text-gray-600 text-sm">Работаем напрямую с фермерскими хозяйствами. Зерно сухое, не прелое.</p>
+            </div>
+            <div class="text-center p-6">
+                <div class="w-16 h-16 bg-sprout/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fa-solid fa-hands-holding-circle text-sprout text-2xl"></i>
+                </div>
+                <h4 class="text-xl font-bold text-brown mb-2">Помощь с погрузкой</h4>
+                <p class="text-gray-600 text-sm">На складе всегда есть грузчики. Быстро и аккуратно загрузим ваш автомобиль.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FOOTER -->
+    <footer id="contacts" class="bg-brown text-cream pt-16 pb-24 md:pb-16">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="fa-solid fa-wheat-awn text-amber text-2xl"></i>
+                    <span class="font-bold text-xl tracking-tight text-white">Агро<span class="text-amber">Зерно</span></span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">
+                    Надежный поставщик качественного зерна в мешках для частных подворий и фермерских хозяйств.
+                </p>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Контакты</h4>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-center"><i class="fa-solid fa-phone text-amber mr-3 w-5"></i> <a href="tel:+79001234567" class="hover:text-amber transition">+7 (900) 123-45-67</a></li>
+                    <li class="flex items-center"><i class="fa-solid fa-envelope text-amber mr-3 w-5"></i> <a href="mailto:info@agro-zerno.ru" class="hover:text-amber transition">info@agro-zerno.ru</a></li>
+                    <li class="flex items-start"><i class="fa-solid fa-location-dot text-amber mr-3 w-5 mt-1"></i> с. Агрономическое, ул. Полевая, д. 15</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-lg font-bold text-white mb-4">Мы в мессенджерах</h4>
+                <div class="flex gap-4">
+                    <a href="https://wa.me/79001234567" target="_blank" class="bg-sprout hover:bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition min-h-[44px] min-w-[44px]">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/yourusername" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-2xl transition min-h-[44px] min-w-[44px]">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+            &copy; 2024 АгроЗерно. Все права защищены.
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY BOTTOM BAR (Visible only on mobile) -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 flex gap-3 md:hidden z-50 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <a href="tel:+79001234567" class="flex-1 bg-brown hover:bg-gray-800 text-white font-bold py-3 rounded-xl text-center transition flex items-center justify-center min-h-[44px]">
+            <i class="fa-solid fa-phone mr-2"></i> Позвонить
+        </a>
+        <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20зерно." target="_blank" class="flex-1 bg-sprout hover:bg-green-600 text-white font-bold py-3 rounded-xl text-center transition flex items-center justify-center min-h-[44px]">
+            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> WhatsApp
+        </a>
+    </div>
+
+    <!-- DESKTOP FLOATING WHATSAPP (Hidden on mobile to avoid overlap with bottom bar) -->
+    <a href="https://wa.me/79001234567?text=Здравствуйте!%20Хочу%20заказать%20зерно." target="_blank" class="hidden md:flex fixed bottom-8 right-8 bg-sprout hover:bg-green-600 text-white w-16 h-16 rounded-full items-center justify-center text-3xl shadow-lg transition transform hover:scale-110 z-50 min-h-[44px] min-w-[44px]">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        menu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll offset adjustment for sticky header is handled by CSS `scroll-margin-top`
+    </script>
+</body>
+</html>
